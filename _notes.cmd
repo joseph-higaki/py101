@@ -41,4 +41,8 @@ git remote add origin git@git.epam.com
 git remote add origin git@git.epam.com:joseph_higaki/py101.git
 git push origin main
 
-rem /*********** some changes  ******************/
+
+
+rem /*********** adding code  ******************/
+git checkout add-main-logic
+git add . adedd helloworld py and changes in ntes command
