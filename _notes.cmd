@@ -46,3 +46,31 @@ git push origin main
 rem /*********** adding code  ******************/
 git checkout add-main-logic
 git add . adedd helloworld py and changes in ntes command
+
+
+
+rem /***********  SUBMITTING TO GITHUB ******************/
+
+rem /*********** generatre \ work loaptop key  ******************/
+ssh-keygen -t ed25519 -C "josephhigaki@hotmail EPAM work laptop for github.com" -f "$HOME/.ssh/id_ed25519_github"
+
+rem /*********** Add an SSH key to your GitLab account in Profile SSH keys  ******************/
+ssh-add $HOME/.ssh/id_ed25519_github
+
+
+rem /*********** Connect to remote GitLab  ******************/
+rem /*********** C:\Users\Joseph_Higaki\.ssh\config file ******************/
+# github.com
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_github
+
+rem /*********** Connect to remote GitLab  ******************/
+ssh -T git@github.com
+
+
+rem /*********** Set local (project folder) username  ******************/
+git config --local user.name "Joseph Higaki" | git config --local user.email "josephhigaki@hotmail.com"
+
+git remote add personal-origin git@github.com:joseph-higaki/py101.git
